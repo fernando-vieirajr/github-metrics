@@ -1,5 +1,10 @@
+import { resolve } from 'path'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  srcDir: 'app',
+  alias: { '#core': resolve(__dirname, 'core') },
+  css: ['~/assets/colors.css'],
   devtools: { enabled: true },
   typescript: { strict: true },
   nitro: {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import './ContribChart.css'
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -7,7 +8,7 @@ import {
   LinearScale,
   Tooltip,
 } from 'chart.js'
-import type { ContribMonth } from '../interfaces/types'
+import type { ContribMonth } from '#core/interfaces/types'
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip)
 
@@ -54,28 +55,3 @@ const chartOptions = {
     <p v-else class="contrib-chart__empty">No contribution data available</p>
   </div>
 </template>
-
-<style scoped>
-.contrib-chart {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px;
-}
-.contrib-chart__title {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 14px;
-}
-.contrib-chart__canvas-wrap {
-  height: 120px;
-}
-.contrib-chart__empty {
-  font-size: 0.875rem;
-  color: #9ca3af;
-  margin: 0;
-}
-</style>

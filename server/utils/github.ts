@@ -1,7 +1,6 @@
-import type { GithubProfile, Language, Repo, ContribMonth } from '../../interfaces/types'
+import type { GithubProfile, Language, Repo, ContribMonth } from '#core/interfaces/types'
 import { calculateScore } from './score'
-
-const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql'
+import { GITHUB_GRAPHQL_URL, CONTRIB_MONTHS_WINDOW } from '#core/constants'
 
 const USER_PROFILE_QUERY = `
   query UserProfile($username: String!, $from: DateTime!, $to: DateTime!) {
@@ -123,7 +122,7 @@ function computeContribByMonth(weeks: Array<{ contributionDays: Array<{ contribu
   return Array.from(byMonth.entries())
     .map(([month, count]) => ({ month, count }))
     .sort((a, b) => a.month.localeCompare(b.month))
-    .slice(-12)
+    .slice(-CONTRIB_MONTHS_WINDOW)
 }
 
 type RawUser = {

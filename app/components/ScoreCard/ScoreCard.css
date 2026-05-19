@@ -1,0 +1,49 @@
+.score-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.score-card__title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 14px;
+}
+.score-card__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.score-card__label {
+  width: 90px;
+  font-size: 0.8125rem;
+  color: var(--color-text-body);
+  flex-shrink: 0;
+}
+.score-card__bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: var(--color-bg-muted);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.score-card__bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.score-card__value {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  min-width: 60px;
+  text-align: right;
+}
+.score-card__max {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}

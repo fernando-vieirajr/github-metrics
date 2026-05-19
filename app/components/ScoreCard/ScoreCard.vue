@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { ScoreBreakdown } from '../interfaces/types'
+import './ScoreCard.css'
+import type { ScoreBreakdown } from '#core/interfaces/types'
 
 defineProps<{ score: ScoreBreakdown | null; loading: boolean }>()
 
@@ -34,55 +35,3 @@ const dimensions = [
     </template>
   </div>
 </template>
-
-<style scoped>
-.score-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px;
-}
-.score-card__title {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 14px;
-}
-.score-card__row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.score-card__label {
-  width: 90px;
-  font-size: 0.8125rem;
-  color: #374151;
-  flex-shrink: 0;
-}
-.score-card__bar-wrap {
-  flex: 1;
-  height: 6px;
-  background: #f3f4f6;
-  border-radius: 3px;
-  overflow: hidden;
-}
-.score-card__bar {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.5s ease;
-}
-.score-card__value {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: #111827;
-  min-width: 60px;
-  text-align: right;
-}
-.score-card__max {
-  font-weight: 400;
-  color: #9ca3af;
-}
-</style>

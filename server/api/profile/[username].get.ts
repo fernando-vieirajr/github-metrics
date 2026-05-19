@@ -1,8 +1,7 @@
 import { fetchGithubProfile } from '../../utils/github'
 import { getCached, setCached } from '../../utils/cache'
-import type { GithubProfile } from '../../../interfaces/types'
-
-const CACHE_TTL = 60 * 60
+import type { GithubProfile } from '#core/interfaces/types'
+import { CACHE_TTL_SECONDS } from '#core/constants'
 
 export default defineEventHandler(async (event) => {
   const username = getRouterParam(event, 'username')
@@ -22,7 +21,7 @@ export default defineEventHandler(async (event) => {
   const { githubToken } = useRuntimeConfig()
   const profile = await fetchGithubProfile(username, githubToken || undefined)
 
-  await setCached(cacheKey, profile, CACHE_TTL)
+  await setCached(cacheKey, profile, CACHE_TTL_SECONDS)
   setHeader(event, 'X-Cache', 'MISS')
 
   return profile

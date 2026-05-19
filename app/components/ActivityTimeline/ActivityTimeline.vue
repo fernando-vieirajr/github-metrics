@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { GithubProfile } from '../interfaces/types'
+import './ActivityTimeline.css'
+import type { GithubProfile } from '#core/interfaces/types'
 
 const props = defineProps<{ profile: GithubProfile | null; loading: boolean }>()
 </script>
@@ -39,27 +40,3 @@ const props = defineProps<{ profile: GithubProfile | null; loading: boolean }>()
     </template>
   </div>
 </template>
-
-<style scoped>
-.activity-timeline__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 12px;
-}
-.activity-timeline__stat {
-  background: #f9fafb;
-  border-radius: 8px;
-  padding: 12px;
-  text-align: center;
-}
-.activity-timeline__value {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-}
-.activity-timeline__label {
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-top: 4px;
-}
-</style>

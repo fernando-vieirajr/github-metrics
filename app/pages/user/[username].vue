@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import './[username].css'
 const route = useRoute()
 const username = route.params.username as string
 const { profile, isLoading, isRateLimited, error } = useProfile(username)
@@ -102,76 +103,3 @@ const retryAfter = computed(() => (error.value as { data?: { retryAfter?: number
     </main>
   </div>
 </template>
-
-<style scoped>
-.dashboard {
-  min-height: 100vh;
-  background: #fafafa;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-.dashboard__nav {
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.dashboard__nav-brand {
-  font-weight: 800;
-  font-size: 1rem;
-  color: #111827;
-}
-.dashboard__nav-github {
-  font-size: 0.875rem;
-  color: #6b7280;
-  text-decoration: none;
-}
-.dashboard__nav-github:hover { color: #111827; }
-.dashboard__main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px 16px;
-}
-.dashboard__section {
-  margin-bottom: 16px;
-}
-.dashboard__stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 16px;
-}
-.stat-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 12px;
-  text-align: center;
-}
-.stat-card__value {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-}
-.stat-card__label {
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-top: 4px;
-}
-.dashboard__tabs-section {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px;
-}
-.dashboard__error {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 32px;
-  text-align: center;
-  color: #374151;
-}
-.dashboard__error h2 { margin: 0 0 8px; color: #111827; }
-</style>

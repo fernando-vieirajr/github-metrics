@@ -1,4 +1,4 @@
-import type { ScoreBreakdown } from '../../interfaces/types'
+import type { ScoreBreakdown } from '#core/interfaces/types'
 
 export function calculateScore(
   commitsThisYear: number,

@@ -1,0 +1,21 @@
+.activity-timeline__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.activity-timeline__stat {
+  background: var(--color-bg-subtle);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.activity-timeline__value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.activity-timeline__label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}

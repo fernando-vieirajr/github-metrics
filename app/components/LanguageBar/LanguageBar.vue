@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { Language } from '../interfaces/types'
+import './LanguageBar.css'
+import type { Language } from '#core/interfaces/types'
 
 defineProps<{ languages: Language[] | null; loading: boolean }>()
 </script>
@@ -31,53 +32,3 @@ defineProps<{ languages: Language[] | null; loading: boolean }>()
     <p v-else class="lang-bar__empty">No language data available</p>
   </div>
 </template>
-
-<style scoped>
-.lang-bar {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px;
-}
-.lang-bar__title {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 12px;
-}
-.lang-bar__track {
-  display: flex;
-  height: 8px;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-.lang-bar__segment {
-  height: 100%;
-}
-.lang-bar__legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.lang-bar__item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.8125rem;
-  color: #374151;
-}
-.lang-bar__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.lang-bar__empty {
-  font-size: 0.875rem;
-  color: #9ca3af;
-  margin: 0;
-}
-</style>

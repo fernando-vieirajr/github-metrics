@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { Repo } from '../interfaces/types'
+import './RepoList.css'
+import type { Repo } from '#core/interfaces/types'
 
 defineProps<{ repos: Repo[] | null; loading: boolean }>()
 
@@ -41,54 +42,3 @@ function formatNumber(n: number): string {
     <p v-else class="repo-list__empty">No repositories found</p>
   </div>
 </template>
-
-<style scoped>
-.repo-list__item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px 12px;
-  background: #f9fafb;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  text-decoration: none;
-  transition: background 0.15s;
-}
-.repo-list__item:hover { background: #f3f4f6; }
-.repo-list__info { flex: 1; min-width: 0; }
-.repo-list__name {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #111827;
-}
-.repo-list__lang {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-left: 10px;
-}
-.repo-list__lang-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-.repo-list__desc {
-  font-size: 0.8125rem;
-  color: #6b7280;
-  margin: 4px 0 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.repo-list__stats {
-  display: flex;
-  gap: 12px;
-  font-size: 0.75rem;
-  color: #6b7280;
-  flex-shrink: 0;
-  margin-left: 12px;
-}
-.repo-list__empty { font-size: 0.875rem; color: #9ca3af; }
-</style>
