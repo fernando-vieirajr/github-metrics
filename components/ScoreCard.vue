@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ScoreBreakdown } from '../shared/types'
+import type { ScoreBreakdown } from '../interfaces/types'
 
 defineProps<{ score: ScoreBreakdown | null; loading: boolean }>()
 

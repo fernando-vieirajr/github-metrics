@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Repo } from '../shared/types'
+import type { Repo } from '../interfaces/types'
 
 defineProps<{ repos: Repo[] | null; loading: boolean }>()
 

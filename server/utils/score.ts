@@ -1,4 +1,4 @@
-import type { ScoreBreakdown } from '../../shared/types'
+import type { ScoreBreakdown } from '../../interfaces/types'
 
 export function calculateScore(
   commitsThisYear: number,
@@ -16,26 +16,22 @@ export function calculateScore(
   hasIssues: boolean,
   hasReviews: boolean,
 ): ScoreBreakdown {
-  // Activity (max 350)
   const activityRaw =
     (commitsThisYear / 500) * 175 +
     (streakDays / 60) * 100 +
     (activeDays / 200) * 75
   const activity = Math.round(Math.min(activityRaw, 350))
 
-  // Impact (max 350): log10 scale
   const starsScore = totalStars > 0 ? (Math.log10(totalStars) / 4) * 200 : 0
   const forksScore = totalForks > 0 ? (Math.log10(totalForks) / 3) * 100 : 0
   const watchersScore = totalWatchers > 0 ? (Math.log10(totalWatchers) / 3) * 50 : 0
   const impactRaw = starsScore + forksScore + watchersScore
   const impact = Math.round(Math.min(impactRaw, 350))
 
-  // Diversity (max 200)
   const boolCount = [hasCommits, hasPRs, hasIssues, hasReviews].filter(Boolean).length
   const diversityRaw = (languageCount / 10) * 100 + (boolCount / 4) * 100
   const diversity = Math.round(Math.min(diversityRaw, 200))
 
-  // Engagement (max 100)
   const engagementRaw =
     (pullRequestsMerged / 50) * 50 +
     (issuesClosed / 50) * 30 +

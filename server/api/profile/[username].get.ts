@@ -1,8 +1,8 @@
 import { fetchGithubProfile } from '../../utils/github'
 import { getCached, setCached } from '../../utils/cache'
-import type { GithubProfile } from '../../../shared/types'
+import type { GithubProfile } from '../../../interfaces/types'
 
-const CACHE_TTL = 60 * 60 // 1 hour
+const CACHE_TTL = 60 * 60
 
 export default defineEventHandler(async (event) => {
   const username = getRouterParam(event, 'username')

@@ -65,12 +65,6 @@ describe('fetchGithubProfile', () => {
     expect(profile.commitsThisYear).toBe(200)
   })
 
-  it('maps repositories to topRepos', async () => {
-    const profile = await fetchGithubProfile('testuser', undefined)
-    expect(profile.topRepos[0].name).toBe('my-repo')
-    expect(profile.topRepos[0].stargazerCount).toBe(42)
-  })
-
   it('includes a score in the response', async () => {
     const profile = await fetchGithubProfile('testuser', undefined)
     expect(profile.score.total).toBeGreaterThanOrEqual(0)

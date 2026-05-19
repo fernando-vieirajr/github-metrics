@@ -7,7 +7,7 @@ import {
   LinearScale,
   Tooltip,
 } from 'chart.js'
-import type { ContribMonth } from '../shared/types'
+import type { ContribMonth } from '../interfaces/types'
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip)
 

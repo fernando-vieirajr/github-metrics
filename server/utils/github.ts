@@ -1,4 +1,4 @@
-import type { GithubProfile, Language, Repo, ContribMonth } from '../../shared/types'
+import type { GithubProfile, Language, Repo, ContribMonth } from '../../interfaces/types'
 import { calculateScore } from './score'
 
 const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql'

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { GithubProfile } from '../shared/types'
+import type { GithubProfile } from '../interfaces/types'
 
 defineProps<{ profile: GithubProfile | null; loading: boolean }>()
 

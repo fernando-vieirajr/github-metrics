@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Language } from '../shared/types'
+import type { Language } from '../interfaces/types'
 
 defineProps<{ languages: Language[] | null; loading: boolean }>()
 </script>
